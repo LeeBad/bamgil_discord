@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*- 
 import discord
+import os
 from discord.ext.commands import bot
 import asyncio
 import requests
@@ -10,7 +11,7 @@ from urllib import parse
 from zeep import Client
 
 client = discord.Client()
-token = "NjkzMTg5MjE2ODM3ODI4NjE4.Xn5dQw.QinMpr4zxnL6JIoMrD47SPng9OQ"
+accese_token = os.environ["BOT_TOKEN"]
 #팅패 정보
 def get_InspectionInfo() :
     wsdl = 'http://api.maplestory.nexon.com/soap/maplestory.asmx?wsdl'
@@ -219,6 +220,6 @@ async def on_message(message):
         embed = discord.Embed(title="[길드 밤길 공지]",description=':one: 서로 존중하는 채팅\n:two: 주간보스 부탁 금지\n:three: 일퀘를 함께 하는 분위기 권장\n:four: 길뚫 부탁 강요X\n:five: 길드 공지 미확인 및 길드 규칙 미숙지시 먼지등급으로 1주일간 강등 혹은 관리자와 의논 후 경고 및 추방\n:six: 길드 장기 미접속(10일 이상)시 추방되며, 그 전에 쪽지로 사정을 말씀해주시면 보류\n:seven:디스코드 혹은 공지방중 하나는 필참\n:eight: 부캐길드: 밤비\n:nine: 오픈채팅:카카오톡-리부트2 밤길\n비밀번호:1213',color=0xFF0000)
         embed.set_thumbnail(url="https://i.imgur.com/cw1MMPw.png")
         await message.author.send(embed=embed)  
-client.run(token)
+client.run(accese_token)
 
 
