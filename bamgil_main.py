@@ -12,7 +12,7 @@ from zeep import Client
 
 client = discord.Client()
 accese_token = os.environ["BOT_TOKEN"]
-#팅패 정보
+#팅패 정보보마
 def get_InspectionInfo() :
     wsdl = 'http://api.maplestory.nexon.com/soap/maplestory.asmx?wsdl'
     client = Client(wsdl=wsdl)
